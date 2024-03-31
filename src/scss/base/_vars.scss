@@ -1,0 +1,15 @@
+:root{
+  /* sans-serif & шрифты */
+  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir,
+    "Nimbus Sans L", Roboto, "Noto Sans", "Segoe UI", Arial, Helvetica,
+    "Helvetica Neue", sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  --standard-border-radius: 10px;
+
+  color-scheme: light;
+  --element_d: rgb(35, 35, 35);
+  --element_l: #ffff;
+  --overlay: #ababab;
+  --accent: #e541f1;
+  --shadow: 2px 2px 15px rgba(0,0,0,.15);
+}

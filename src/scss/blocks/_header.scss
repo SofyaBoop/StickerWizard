@@ -1,0 +1,244 @@
+.header_navbar{
+    position: sticky;
+    top: 0;
+    z-index: 997;
+    background: var(--element_d);
+}
+
+.navbar {
+    padding: 0 1rem;
+    width: 100%;
+    height: 6rem;
+    max-width: 90%;
+    border-radius: 10px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo_img{
+    object-fit: scale-down;
+    max-width: 10rem;
+    max-height: 10rem;
+}
+
+.navbar__logo a{
+    color: var(--element_l);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor:pointer;
+}
+.navbar__navigation {
+    list-style-type: none;
+}
+.navbar__links {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+.navbar__links li, .dropdown_navbar__links{
+    list-style-type: none;
+}
+.navbar__links a{
+    color: var(--element_l);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.navbar__links a:hover, 
+.dropdown_navbar__links a:hover{
+    color:var(--accent);
+}
+
+.navbar_io{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar_io a{
+    color:var(--element_l);
+}
+
+.fa-cart-shopping{
+    color:var(--element_l);
+    font-size: 1.4rem;
+}
+.fa-user{
+    font-size: 1.5rem;
+}
+.fa-xmark{
+    font-size: 1.8rem;
+}
+
+.cart_btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 20%;
+  border: none;
+  background-color: var(--accent);
+  transition: 0.5s;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  object-fit: contain;
+  }
+  
+  .cart_btn:hover {
+    filter: brightness(150%);
+  }
+  
+  .cart__num {
+  position: absolute;
+  background-color: var(--element_d);
+  border: 0.1rem solid var(--accent);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--element_l);
+  font-size: 14px;
+  font-weight: 500;
+  top: -4px;
+  right: -4px;
+  }
+
+.navbar__toggle_btn{
+    color: var(--element_l);
+    font-size: 1.5rem;
+    cursor:pointer;
+    display: none;
+}
+
+
+.dropdown_navbar{
+    position: fixed;
+    background: var(--element_l); 
+    z-index: 999;
+    height:max-content;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    transition: 0.5s;
+    transform: translate(100%);
+}
+.dropdown_navbar_active{
+    transform: translate(0%)
+}
+.dropdown_navbar__toggle_btn{
+    color: var(--element_d);
+    font-size: 1.5rem;
+    cursor:pointer;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+    height:5%;
+    display:flex;
+    justify-content:right;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.dropdown_navbar__links{
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
+    justify-content: space-around;
+    height: 30%;
+    width: 100%;
+    padding-left: 1.2rem;
+}
+.dropdown_navbar__links a{
+    color: var(--element_d);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.dropdown__logo{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 5%;
+    width: 100%;
+    padding-left: 1.2rem;
+}
+.dropdown__logo_img{
+    object-fit: scale-down;
+    max-width: 12rem;
+    max-height: 12rem;
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+  }
+
+@media (max-width: 1200px){
+    .navbar__links a{
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 1068px){
+    .navbar__links{
+        display:none;
+    }
+
+    .navbar{
+        background:none;
+        backdrop-filter: none;
+    }
+    
+    
+    .navbar .navbar__toggle_btn{
+        display: block;
+    }
+}
+@media (max-width: 576px){
+    .dropdown_navbar__links{
+        width: 80%;
+        gap:0.6rem;
+        line-height:0.9rem;
+        padding-left: 0.8rem;
+    }
+    .dropdown_navbar__links a{
+        font-size: 0.9rem;
+        
+    }
+    .navbar_io{
+        gap: 1rem;
+    }
+    .logo_img{
+        max-width: 9rem;
+        max-height: 9rem;
+    }
+    .dropdown__logo{
+        height: 3%;
+    }
+    .dropdown__logo_img{
+        max-width: 9rem;
+        max-height: 9rem;
+    }
+}
+@media (max-width: 354px){
+    .cart_btn{
+        display:none;
+    }
+    .dropdown_navbar__links a{
+        font-size: 0.8rem;
+    }
+    .dropdown__logo_img{
+        max-width: 6.5rem;
+        max-height: 6.5rem;
+    }
+}

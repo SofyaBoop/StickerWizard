@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="css/main.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>main_sticker_wizard</title>
+</head>
+<body>
+    <header class="header_navbar">
+    <div class="navbar">
+        <div class="navbar__logo"> 
+            <a href="#"><img class="logo_img" src="img/sw_ilogo_v2.png"/></a>
+        </div>
+        <nav class="navbar__navigation">
+            <ul class="navbar__links">
+                <li><a href="services.html">НАШИ УСЛУГИ</a></li>
+                <li><a href="delivery.html">ОПЛАТА И ДОСТАВКА</a></li>
+                <li><a href="requirements.html">МАКЕТЫ</a></li>
+                <li><a href="contacts.html">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+        <div class="navbar_io">
+            <button class="cart_btn" id="cart_btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div class="cart__num" id="cart_num">0</div>
+            </button>
+            <a href="profile">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <div class="navbar__toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </div>
+    </header>
+    <div class="overlay" id="overlay"></div>
+    <header class="dropdown_navbar">
+        <div class="dropdown_navbar__toggle_btn">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <div class="dropdown__logo"> 
+            <a href="#"><img class="dropdown__logo_img" src="img/sw_ilogo_v3.png"/></a>
+        </div>
+        <nav class="dropdown_navbar__navigation">
+            <ul class="dropdown_navbar__links">
+                <li><a href="servives">НАШИ УСЛУГИ</a></li>
+                <li><a href="delivery">ОПЛАТА И ДОСТАВКА</a></li>
+                <li><a href="requirements">МАКЕТЫ</a></li>
+                <li><a href="contacts">КОНТАКТЫ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        
+    </main>
+    <footer class="footer">
+    <div class="footer_box">
+        <div class="upper_footer">
+            <nav class="footer__navigation">
+                <ul class="footer__links">
+                    <li><a href="serviсes">наши услуги</a></li>
+                    <li><a href="delivery">оплата и доставка</a></li>
+                    <li><a href="requirements">макеты</a></li>
+                    <li><a href="contacts">контакты</a></li>
+                </ul>
+            </nav>
+            <div class="footer__meta meta">
+                <div class="meta__contacts contacts">
+                    <div class="div_email contacts__div"><a href="#">sticker_wizard@gmail.com</a></div>
+                    <div class="div_phone contacts__div"><a href="tel:+79999999999">+7(999)999-99-99</a></div>
+                    <div class="div_w_day contacts__div"><p>Пн-Пт: 12:00 - 20:00</p></div>
+                </div>
+                <div class="meta__nets nets">
+                    <a href="#"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="#"><i class="fa-brands fa-vk"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="lower_footer">
+           <div class="footer__pay_methods">
+            <img class="image_pay" src="./img/pay_methods/pay.png" alt="Способ оплаты"/>
+           </div>
+           <div class="footer__copyrite">
+            <h6 class="copyrite">2024 © StickerWizard.ru - интернет-магазин стикеров</h5>
+            <a href="agreement" class="agree_link">Согласие на обработку персональных данных</a>
+           </div> 
+        </div>
+    </div>
+</footer>
+    <script src="./js/index.bundle.js"></script>
+</body>
+</html>
