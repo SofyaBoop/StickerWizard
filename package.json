@@ -2,6 +2,7 @@
   "devDependencies": {
     "@babel/core": "^7.24.3",
     "@babel/preset-env": "^7.24.3",
+    "browser-sync": "^3.0.2",
     "css-loader": "^6.10.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",

@@ -1,0 +1,32 @@
+.intro_block {
+    display: flex;
+    flex-direction: row;
+    height: 90vh;
+    width: 100%;
+}
+.intro_block__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+.intro_block__left h1 {
+    line-height: normal;
+}
+
+@media (max-width: 1068px){
+    .intro_block {
+        height: auto;
+    }
+}
+
+@media (max-width: 720px){
+    .intro_block {
+        flex-direction: column-reverse;
+    }
+    .intro_block__left {
+        text-align: center;
+        width: 100%;
+    }
+}

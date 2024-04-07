@@ -1,0 +1,42 @@
+.services_section {
+    border-style: none;
+}
+.services_section__box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); 
+    gap: 1.5rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.service {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+    background: transparent;  
+    cursor:pointer;
+    transition: transform 0.5s, background 0.5s;
+}
+.service:hover{
+    /* background: var(--accent); */
+    color: var(--accent);
+    transform:scale(1.05);
+}
+.service:active{
+    transform:scale(0.95);
+}
+.service h4{
+    margin-bottom: 0;
+}
+.service i{
+    font-size: 2rem;
+    color:var(--element_d);
+}
+.service_img {
+    width: clamp(150px, 20vw, 200px);
+    height: clamp(150px, 20vw, 200px);
+    background-size: cover;
+}
+

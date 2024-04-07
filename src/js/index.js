@@ -1,3 +1,7 @@
-import hello from './modules/hello.js'
+import { initDropdown } from './modules/dropdown.js';
+import { initDetails } from './modules/faq_only_one.js';
 
-console.log(hello)
+document.addEventListener('DOMContentLoaded', function() {
+    initDropdown();
+    initDetails();
+});

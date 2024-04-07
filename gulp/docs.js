@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const browsersync = require('browser-sync').create();
 
 //HTML
 const fileInclude = require('gulp-file-include');
@@ -116,11 +117,20 @@ gulp.task('js:docs', function(){
         .pipe(gulp.dest('./docs/js'))
 });
 
-const serverOptions = {
-    livereload: true,
-    open: true
-};
+// const serverOptions = {
+//     livereload: true,
+//     open: true
+// };
+
+// gulp.task('server:docs', function(){
+//     return gulp.src('./docs/').pipe(server(serverOptions));
+// });
 
 gulp.task('server:docs', function(){
-    return gulp.src('./docs/').pipe(server(serverOptions));
+    browsersync.init({
+        server:{
+            baseDir: "./docs"
+        }
+    });
+    browsersync.watch('docs', browsersync.reload)
 });

@@ -1,0 +1,38 @@
+.example_section {
+    border-style: none;
+}
+.example_section__box {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(8rem, 1fr));
+    gap: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+.example_section__card{
+    background-size: cover;
+    object-fit: scale-down;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    text-align: center;
+    align-items: center;
+}
+.example_img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+}
+
+@media only screen and (max-width: 1068px) {
+    .example_section__box {
+        grid-template-columns: repeat(3, minmax(10rem, 1fr));
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    .example_section__box {
+        grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    }
+}

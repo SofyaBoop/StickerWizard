@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const browsersync = require('browser-sync').create();
 const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('sass'));
 const sassGlob = require('gulp-sass-glob');
@@ -44,6 +45,7 @@ gulp.task('html:dev', function(){
         .pipe(plumber(plumberNotify('HTML')))
         .pipe(fileInclude(fileIncludeSettings))
         .pipe(gulp.dest('./built/'))
+        .on('end', browsersync.reload)
 });
 
 gulp.task('sass:dev', function(){
@@ -56,6 +58,7 @@ gulp.task('sass:dev', function(){
         .pipe(sass())
         .pipe(sourceMaps.write())
         .pipe(gulp.dest('./built/css/'))
+        .pipe(browsersync.reload({stream: true}))
 });
 
 gulp.task('images:dev', function(){
@@ -64,6 +67,7 @@ gulp.task('images:dev', function(){
     .pipe(changed('./built/img/'))
     //.pipe(imagemin({ verbose: true}))
     .pipe(gulp.dest('./built/img/'))
+    .pipe(browsersync.reload({stream: true}))
 });
 
 gulp.task('fonts:dev', function(){
@@ -71,6 +75,7 @@ gulp.task('fonts:dev', function(){
     .src('./src/fonts/**/*')
     .pipe(changed('./built/fonts/'))
     .pipe(gulp.dest('./built/fonts/'))
+    .pipe(browsersync.reload({stream: true}))
 });
 
 gulp.task('files:dev', function(){
@@ -78,6 +83,7 @@ gulp.task('files:dev', function(){
     .src('./src/files/**/*')
     .pipe(changed('./built/files/'))
     .pipe(gulp.dest('./built/files/'))
+    .pipe(browsersync.reload({stream: true}))
 });
 
 gulp.task('js:dev', function(){
@@ -88,15 +94,25 @@ gulp.task('js:dev', function(){
         //.pipe(babel())
         .pipe(webpack(require('./../webpack.config.js')))
         .pipe(gulp.dest('./built/js'))
+        .pipe(browsersync.reload({stream: true}))
 });
 
-const serverOptions = {
-    livereload: true,
-    open: true
-};
+// const serverOptions = {
+//     livereload: true,
+//     open: true
+// };
+
+// gulp.task('server:dev', function(){
+//     return gulp.src('./built/').pipe(server(serverOptions));
+// });
 
 gulp.task('server:dev', function(){
-    return gulp.src('./built/').pipe(server(serverOptions));
+    browsersync.init({
+        server:{
+            baseDir: "./built"
+        }
+    });
+    //browsersync.watch('built', browsersync.reload)
 });
 
 gulp.task('watch:dev', function(){
