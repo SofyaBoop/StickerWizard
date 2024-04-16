@@ -3,12 +3,13 @@
     top: 0;
     z-index: 997;
     background: var(--element_d);
+    height: 6rem;
 }
 
 .navbar {
     padding: 0 1rem;
     width: 100%;
-    height: 6rem;
+    height: 100%;
     max-width: 90%;
     border-radius: 10px;
     margin: 0 auto;
