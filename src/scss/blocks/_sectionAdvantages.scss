@@ -18,6 +18,7 @@
     box-shadow: var(--shadow);
     padding: 1.5rem;
     height: 100%;
+    max-width: 100%;
 }
 .card_img {
     width:100px;
@@ -32,5 +33,11 @@
 @media (max-width: 1240px){
     .advantage_section__box{
         grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+    }
+}
+@media (max-width: 425px){
+    .advantage_section__box{
+        display: flex;
+        flex-direction: column;
     }
 }
