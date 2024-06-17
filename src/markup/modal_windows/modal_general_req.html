@@ -1,0 +1,17 @@
+<dialog  id="modal_general_req" class="modal_general_req modal_window" aria-label="Окно требоавний к макетам">
+    <div class="modal_general_req__content modal_content">
+        <h4>Общие требоавния</h4>
+        <span class="window_text">
+            <ul>
+                <li>Цветовая модель – CMYK, RGB.</li>
+                <li>Цветовой профиль - для CMYK - Coated FOGRA 39, для RGB – Adobe RGB.</li>
+                <li>Разрешение макета - 300ppi.</li>
+                <li>Масштаб макета – 1:1.</li>
+                <li>Один стикер – один файл с указанием в название имя_размер в мм_тираж (name_100x100mm_50st).</li>
+                <li>Текста в макете быть не должно, он должен быть векторным объектом.</li>
+                <li>Если в макет вставляли растровые готовые изображения, то их необходимо «Встроить». Растровое изображение должно быть разрешением 300ppi.</li>
+            </ul>
+        </span>
+        <button onclick="window.modal_general_req.close();" aria-label="close" class="x_exit"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+</dialog>

@@ -1,0 +1,125 @@
+#testimonials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+.testimonial-link{
+    letter-spacing: 0.05rem;
+    margin: 1.5rem 0;
+    padding: 0.5rem 1rem;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.testimonial-link-heading{
+    letter-spacing: 0.05rem;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.testimonial-link button, .testimonial-link-heading button{
+    background-color: var(--element_d);
+    color: var(--element_l); 
+    border: 0;
+    border-radius: var(--standard-border-radius);
+    display: block;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    opacity: 1;
+    padding: 1rem 2.8rem;
+    visibility: visible;
+    -webkit-transition: all .3s ease;
+
+    &:hover {
+        transition: all .3s ease;
+        background-color: var(--accent);
+        color: var(--element_l);
+    };
+}
+.testimonial-link button {
+    margin: 1.8rem auto; 
+}
+.testimonial-link-heading button{
+    margin-bottom: 1.8rem;
+}
+.testimonial-box-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.testimonial-box{
+    display: none;
+    width: 45%;
+    min-height: 15rem;
+    box-shadow: var(--shadow);
+    border-radius: var(--standard-border-radius);
+    padding: 1rem;
+    margin: 0.8rem;
+    cursor: pointer;
+}
+.profile-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 0.5px;
+}
+.profile-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.profile_review{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+.name-user{
+    display: flex;
+    flex-direction: column;
+}
+.name-user strong{
+    font-size: 1.4rem;
+    letter-spacing: 0.05rem;
+}
+.name-user span{
+    color: rgb(from var(--element_d) r g b / 0.4);
+    font-size: 1rem;
+}
+.box-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+ 
+@media(max-width:1060px){
+    .testimonial-box{
+        padding: 0.5rem;
+    }
+}
+@media(max-width:840px){
+    .testimonial-box{
+        width:100%;
+    }
+}
+@media(max-width:340px){
+    .box-top{
+        flex-wrap: wrap;
+        margin-bottom: 0.5rem;
+    }
+    .reviews{
+        margin-top: 0.5rem;
+    }
+}

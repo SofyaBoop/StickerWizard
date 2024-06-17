@@ -1,0 +1,139 @@
+.admin_panel_block{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 3rem;
+}
+.admin_panel_block h3{
+  margin: 1rem 0;
+}
+.sidebar_block{
+  display: block;
+}
+.sidebar{
+  display:flex;
+  margin: 1rem 0;
+  background-color: none;
+  height: fit-content;
+  width:100%;
+  border-bottom: 0.05rem solid var(--accent);
+}
+.admin_panel_table__users{
+  width:100%;
+}
+.admin_panel_table__orders p{
+  margin: 0;
+}
+.sidebar ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.admin_act_btn_block {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+.admin_act_btn {
+  color: var(--element_l);
+  background-color: var(--element_d);
+  border-radius: var(--little-border-radius);
+  height: fit-content;
+  min-width: 2rem;
+  padding: 0.5rem;
+  transition: 0.2s;
+}
+.admin_act_btn:hover {
+  background-color: var(--accent);
+}
+.col_manage_th{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.manage_td_1, .manage_td_2, .manage_td_3{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.manage_td_3{
+  grid-template-columns: repeat(3, 1fr);
+}
+.manage_td_2{
+  grid-template-columns: repeat(2, 1fr);
+}
+.manage_td_1{
+  grid-template-columns: repeat(1, 1fr);
+}
+.sidebar_link{
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+.sidebar_link.active{
+  color: var(--accent);
+}
+.sidebar_link, .admin_panel_table__btn{
+  display: block;
+  font-weight: bold;
+  color: var(--element_d);
+}
+.sidebar_link:hover, .admin_panel_table__btn:hover{
+  color: var(--accent);
+  text-decoration: none;
+}
+.user_icon{
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+.user_icon {
+  pointer-events: none;
+}
+.user_icon p{
+  font-size: large;
+  font-weight: bold;
+  margin: 0;
+}
+.create_user_field_check_admin, .create_service_field_check_admin, .create_user_field, .create_service_field,
+.edit_service_field, .edit_user_field, .edit_user_field_check_admin, .edit_service_field_check_admin, .edit_order_field{
+  margin: 0.5rem 0;
+}
+.form_check_input {
+  background-image: var(--bs-form-check-bg-image);
+  --bs-form-check-bg: var(--bs-body-bg);
+  border-color: var(--accent);
+  width: 1em;
+  height: 1em;
+}
+.create_btn, .edit_btn{
+  background-color: var(--accent);
+    color: var(--element_l);
+    border-radius: 5px;
+    border-style: none;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.15rem;
+    min-height: 2rem;
+    width: 100%;
+    transition: 0.5s;
+    font-style: none;
+
+    &:hover {
+      filter: brightness(1.75);
+    }
+}
+.btn_link {
+  color: var(--accent);
+  text-decoration: underline;
+  padding: 0;
+}

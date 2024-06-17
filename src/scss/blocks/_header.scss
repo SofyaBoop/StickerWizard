@@ -1,7 +1,7 @@
 .header_navbar{
     position: sticky;
     top: 0;
-    z-index: 997;
+    z-index: 996;
     background: var(--element_d);
     height: 6rem;
 }
@@ -43,13 +43,16 @@
 .navbar__links li, .dropdown_navbar__links{
     list-style-type: none;
 }
-.navbar__links a{
+.navbar__links li a{
     color: var(--element_l);
     text-decoration: none;
     font-weight: bold;
     font-size: 1rem;
 }
-.navbar__links a:hover, 
+.navbar__links li a.active{
+    color: var(--accent);
+}
+.navbar__links li a:hover, 
 .dropdown_navbar__links a:hover{
     color:var(--accent);
 }
@@ -74,7 +77,14 @@
 .fa-xmark{
     font-size: 1.8rem;
 }
-
+.admin_logout_btn i{
+    font-size: 1.5rem;
+    color:var(--element_l);
+}
+.admin_logout_btn{
+    margin:0;
+    padding: 0;
+}
 .cart_btn {
   width: 3rem;
   height: 3rem;
@@ -117,6 +127,7 @@ right: -4px;
     cursor:pointer;
     display: none;
 }
+
 
 
 .dropdown_navbar{
@@ -175,19 +186,10 @@ right: -4px;
     max-width: 12rem;
     max-height: 12rem;
 }
-.overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    z-index: 998;
-  }
+
 
 @media (max-width: 1200px){
-    .navbar__links a{
+    .navbar__links li a{
         font-size: 0.9rem;
     }
 }
@@ -195,13 +197,10 @@ right: -4px;
     .navbar__links{
         display:none;
     }
-
     .navbar{
         background:none;
         backdrop-filter: none;
     }
-    
-    
     .navbar .navbar__toggle_btn{
         display: block;
     }

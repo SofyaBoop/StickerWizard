@@ -7,7 +7,11 @@ const config = {
         requirements: './src/js/requirements.js',
         delivery: './src/js/delivery.js',
         user: './src/js/user.js',
-        cart: './src/js/cart.js'
+        cart: './src/js/cart.js',
+        constructor: './src/js/constructor.js',
+        req: './src/js/req.js',
+        admin: './src/js/admin.js',
+        admin_service_index: './src/js/admin_service_index.js'
     },
     output: {
         filename: '[name].bundle.js'

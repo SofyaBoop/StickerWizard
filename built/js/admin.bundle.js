@@ -1,0 +1,1 @@
+!function(){"use strict";document.addEventListener("DOMContentLoaded",(function(){var e;e=window.location.href.replace(/\/[^\/]+\.php$/,""),document.querySelectorAll(".sidebar_link").forEach((function(t){t.getAttribute("href").replace(/\/[^\/]+\.php$/,"").toLowerCase()===e&&t.classList.add("active")}))}))}();

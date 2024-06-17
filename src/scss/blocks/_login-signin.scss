@@ -1,0 +1,256 @@
+.log_sign_section {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_log_sign {
+	background-color: var(--element_d);
+	border-radius: var(--standard-border-radius);
+	height: 32rem;
+	width: clamp(15rem, 40vw, 45rem);
+	position: relative;
+	overflow: hidden;
+    margin: 1rem;
+    //z-index: 999;
+	box-shadow: var(--shadow);
+	
+	&::after {
+		content: '';
+		opacity: .8;
+		position: absolute;
+		top: 0; right:0; bottom:0; left:0;
+		background-repeat: no-repeat;
+		background-position: left bottom;
+		background-color: rgb(from var(--element_l) r g b / 0.05);
+	}
+	
+	.signup {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		width: 70%;
+		z-index: 5;
+		-webkit-transition: all .3s ease;
+		
+		
+		&.slide-up {
+			top: 5%;
+			-webkit-transform: translate(-50%, 0%);
+			-webkit-transition: all .3s ease;
+		}
+		
+		&.slide-up .form-holder,
+		&.slide-up .log_sign_btn {
+			opacity: 0;
+			visibility: hidden;
+		}
+		
+		&.slide-up .form_log_sign_title {
+			font-size: 1em;
+			cursor: pointer;
+		}
+		
+		&.slide-up .form_log_sign_title span {
+			margin-right: 0.5rem;
+			opacity: 1;
+			visibility: visible;
+			-webkit-transition: all .3s ease;
+		}
+		
+		.form_log_sign_title {
+			color: var(--element_l);
+			text-align: center;
+            cursor: pointer;
+		}
+
+		.block_errMsg{
+			display: flex;
+			justify-content: center;
+			overflow: hidden;
+			visibility: visible;
+			color: var(--element_l);
+		}
+		
+		.form-holder {
+			border-radius: var(--standard-border-radius);
+			background-color: var(--element_l);
+			overflow: hidden;
+			margin-top: 0.5rem;
+			opacity: 1;
+			visibility: visible;
+			-webkit-transition: all .3s ease;
+			
+			.input_log_sign {
+				border: 0;
+				outline: none;
+				box-shadow: none;
+				display: block;
+				line-height: 1.8rem;
+				padding: 0.5rem 1rem;
+				border-bottom: 0.05rem solid rgb(from var(--element_d) r g b / 0.2);
+                caret-color: var(--element_d);
+				width: 100%;
+
+				&:last-child {
+					border-bottom: 0;
+				}
+				&::-webkit-input-placeholder {
+					color: rgb(from var(--element_d) r g b / 0.4);
+				}
+			}
+		}
+		
+		.log_sign_btn {
+			background-color: rgb(from var(--element_l) r g b / 0.7);
+			color: rgb(from var(--element_d) r g b / 0.7);
+			border: 0;
+			border-radius: var(--standard-border-radius);
+			display: block;
+			margin: 1rem auto; 
+			padding: 1rem 0;
+			width: 100%;
+			font-weight: bold;
+			cursor: pointer;
+			opacity: 1;
+			visibility: visible;
+			-webkit-transition: all .3s ease;
+			
+			&:hover {
+				transition: all .3s ease;
+				background-color: var(--element_l);
+                color: var(--element_d);
+			}
+		}
+	}
+	
+	.login {
+		position: absolute;
+		top: 20%;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: var(--element_l);
+		z-index: 5;
+		-webkit-transition: all .3s ease;
+		
+		&::before {
+			content: '';
+			position: absolute;
+			left: 50%;
+			top: -20px;
+			-webkit-transform: translate(-50%, 0);
+			background-color: var(--element_l);
+			width: 200%;
+			height: 15.5rem;
+			border-radius: 50%;
+			z-index: 4;
+			-webkit-transition: all .3s ease;
+		}
+		
+		.center {
+			position: absolute;
+			top: calc(50% - 10%);
+			left: 50%;
+			-webkit-transform: translate(-50%, -50%);
+			width: 65%;
+			z-index: 5;
+			-webkit-transition: all .3s ease;
+			
+			.form_log_sign_title {
+				color: var(--element_d);
+				text-align: center;
+                cursor: pointer;
+			}
+
+			.block_errMsg{
+				display: flex;
+				justify-content: center;
+				overflow: hidden;
+				visibility: visible;
+				color: var(--accent);
+			}
+
+			.form-holder {
+				border-radius: var(--standard-border-radius);
+				background-color: var(--element_l);
+				border: 0.05rem solid rgb(from var(--element_d) r g b / 0.2);
+				overflow: hidden;
+				margin-top: 0.5rem;
+				opacity: 1;
+				visibility: visible;
+				-webkit-transition: all .3s ease;
+
+				.input_log_sign {
+                    border: 0;
+                    outline: none;
+                    box-shadow: none;
+                    display: block;
+                    line-height: 1.8rem;
+                    padding: 0.5rem 1rem;
+                    caret-color: var(--element_d);
+                    border-bottom: 0.05rem solid rgb(from var(--element_d) r g b / 0.2);
+                    width: 100%;
+    
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                    &::-webkit-input-placeholder {
+                        color: rgb(from var(--element_d) r g b / 0.4);
+                    }
+                }
+			}
+
+			.log_sign_btn {
+				background-color: var(--element_d);
+				color: rgb(from var(--element_l) r g b / 0.7);
+				border:0;
+				border-radius: var(--standard-border-radius);
+				display: block;
+				margin: 1.8rem auto; 
+				padding: 1rem 2.8rem;
+				width: 100%;
+				font-weight: bold;
+				cursor: pointer;
+				opacity: 1;
+				visibility: visible;
+				-webkit-transition: all .3s ease;
+
+				&:hover {
+					transition: all .3s ease;
+					background-color: var(--accent);
+                    color: var(--element_l);
+				}
+			}
+		}
+		
+		&.slide-up {
+			top: 90%;
+			-webkit-transition: all .3s ease;
+		}
+		
+		&.slide-up .center {
+			top: 10%;
+			-webkit-transform: translate(-50%, 0%);
+			-webkit-transition: all .3s ease;
+		}
+		
+		&.slide-up .form-holder,
+		&.slide-up .log_sign_btn,
+		&.slide-up .block_errMsg {
+			opacity: 0;
+			visibility: hidden;
+			-webkit-transition: all .3s ease;
+		}
+		
+		&.slide-up .form_log_sign_title {
+			font-size: 1em;
+			margin: 0;
+			padding: 0;
+			cursor: pointer;
+			-webkit-transition: all .3s ease;
+		}
+	}
+}

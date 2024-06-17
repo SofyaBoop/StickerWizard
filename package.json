@@ -24,6 +24,7 @@
     "gulp-webp": "^4.0.1",
     "gulp-webp-css": "^1.1.0",
     "gulp-webp-html": "^1.0.2",
+    "merge-stream": "^2.0.0",
     "sass": "^1.72.0",
     "style-loader": "^3.3.4",
     "webpack-stream": "^7.0.0"
@@ -35,5 +36,21 @@
   },
   "browserslist": [
     "last 5 versions"
-  ]
+  ],
+  "dependencies": {
+    "jquerry": "^0.0.1-security"
+  },
+  "name": "stickerwizarddocs.localhost",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

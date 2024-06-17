@@ -1,0 +1,72 @@
+// Основные стили для всех модальных окон
+.modal_window {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+    padding: 1.5rem;
+	background: var(--element_l);
+	width: fit-content;
+    max-width: 45rem;
+    min-width: 30rem;
+	border-radius: var(--standard-border-radius);
+	box-shadow: var(--shadow);
+	animation: fadeIn 1s ease both;
+    
+	&::backdrop {
+		animation: fadeIn 1s ease both;
+		background: rgb(from var(--element_d) r g b / 0.7);
+		z-index: 2;
+		backdrop-filter: blur(1px);
+    }
+}
+
+.modal_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.modal_body_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: scale-down;
+    max-height: 10rem;
+    min-height: 2rem;
+    min-width: 25rem;
+    max-width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+.modal_body_img img {
+    width: clamp(150px, 20vw, 200px);
+}
+.window_text ul li{
+    margin-left: 1.2rem;
+}
+.modal_notice_exit__content h4 {
+    margin-top: 0;
+}
+.window_text {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 0.5rem;
+    margin-top: 1rem;
+}
+.window_text a {
+    color: var(--accent);
+}
+.x_exit {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+

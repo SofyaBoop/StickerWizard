@@ -1,0 +1,270 @@
+.section_constructor {
+    display:flex;
+    flex-direction: row;
+    gap: 2rem;
+    position: relative;
+    height: max-content;
+    width: 100%;
+    justify-content: space-between;
+    align-items: stretch;
+    margin: 2rem 0;
+}
+.section_constructor__left_side {
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 20%;
+    height: 100%;
+}
+.section_constructor__right_side {
+    max-width: 80%;
+}
+
+.constructor__box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color:none;
+    border-radius: var(--standard-border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+.constructor__calc_fields {
+    display: grid;
+    grid-template-columns: 1fr 8rem 1fr;
+    grid-gap: 1.5rem;
+    align-items: stretch;
+    margin-bottom: 1rem;
+}
+.constructor__field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: flex-start; 
+}
+.constructor_button {
+    display: flex;
+    background-color: var(--element_l);
+    border-radius: 5px;
+    border: 0.07rem solid rgb(from var(--element_d) r g b / 0.5);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    height: 2.5rem;
+    margin-top: 0.2rem;
+    padding: 0.5rem;
+    transition: 0.2s;
+}
+
+.constructor_button > * {
+    margin: 0.2rem 0 0.2rem 0;
+}
+
+.material_field__value:hover, .size_field__value:hover, .quantity_field__value .constructor_button:hover,
+.material_field__value--active, .size_field__value--active, .quantity_field__value--active .constructor_button,
+.quantity_field__control--active input, .size_field__control--active input{
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--element_l);
+}
+.input_number {
+    vertical-align: top;
+    text-align: center;
+    outline: none;
+    user-select: none;
+    height: 2.5rem;
+}
+.input_number__size{
+    max-width: 40%;
+}
+.input_number__quantity{
+    max-width: 100%;
+}
+.size_field__control {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.size_field__control--active {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+}
+.size_field__control span{
+    flex-grow: 1;
+}
+.hint {
+    font-size: 0.875rem;
+}
+.quantity_field__value {
+    display: grid;
+    grid-template-columns: 7.5rem 7rem 1fr!important;
+    grid-gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+.temp_price {
+    text-align: center;
+}
+.quantity_sale {
+    color: var(--accent);
+}
+.quantity_field__control {
+    display: none;
+}
+.quantity_field__control--active {
+    display: grid;
+    grid-template-columns: 7.5rem 7rem 1fr!important;
+    grid-gap: 0.2rem 1rem;
+    align-items: center;
+}
+.quantity_field__control .hint{
+    grid-column: 1 / -1;
+}
+.constructor__info_field {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+.info_field__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.info_field__links a{
+    color: var(--element_d);
+}
+.info_field__links a:hover{
+    color: var(--accent);
+}
+.info_field__price {
+    display: flex;
+    flex-direction: row;
+    gap:0.2rem;
+    //align-items: center;
+    justify-content: left;
+    //text-align: center;
+    width: 50%;
+}
+.info_field__price p, .info_field__price span{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+.btn_add_card {
+    background-color: var(--accent);
+    color: var(--element_l);
+    border-radius: 5px;
+    border-style: none;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    cursor:pointer;
+    font-weight: bold;
+    font-size: 1.15rem;
+    min-height: 4rem;
+    width: 8rem;
+    margin: 0;
+    transition: 0.3s;
+}
+.btn_add_card:hover{
+    filter: brightness(150%);
+}
+
+.drop_container {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: max;
+    padding: 1rem;
+    border-radius: var(--standard-border-radius);
+    border: 0.1rem dashed var(--element_d);
+    color: var(--element_d);
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+.drop_container:hover,
+.drop_container.drag-active {
+    background: rgb(from var(--accent) r g b / 0.1);
+    border-color: var(--element_d);
+}
+.drop_container:hover .drop_title,
+.drop_container.drag-active .drop_title {
+    color: var(--element_d);
+}
+.drop_title {
+    color: var(--element_d);
+    text-align: center;
+    transition: color .2s ease-in-out;
+}
+.preview_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 10rem;
+    object-fit: scale-down;
+}
+.preview_img img{
+    max-width: 100%;
+}
+
+@media (max-width: 1240px){
+    .section_constructor {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .section_constructor__left_side, .section_constructor__right_side {
+        width: 100%;
+    }
+    .section_constructor__left_side{
+        justify-content: center;
+        align-items: center;
+    }
+    .section_constructor__left_side p{
+        align-self: center;
+    }
+}
+@media (max-width: 1100px){
+    .constructor__calc_fields {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+    }
+    .constructor__info_field {
+        flex-direction: column;
+        gap:0.5rem;
+    }
+    .input_number__size{
+        width: 45%;
+    }
+    .size_field__control span{
+        flex-grow: none;
+        width: 10%;
+    }
+    .btn_add_card {
+        font-size: 1rem;
+    }
+    .info_field__links {
+        justify-content: center;
+    }
+    .info_field__price, .btn_add_card, .info_field__links {
+        width: 100%;
+    }
+}

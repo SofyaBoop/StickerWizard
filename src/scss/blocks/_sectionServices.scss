@@ -21,22 +21,39 @@
 }
 .service:hover{
     /* background: var(--accent); */
-    color: var(--accent);
     transform:scale(1.05);
 }
 .service:active{
     transform:scale(0.95);
 }
-.service h4{
+.service_btn{
+    margin: 0;
+    padding: 0;
+}
+.service_btn:hover{
+    color: var(--accent);
+}
+.service .service_btn h4{
     margin-bottom: 0;
 }
-.service i{
-    font-size: 2rem;
-    color:var(--element_d);
-}
-.service_img {
+.service_img img {
     width: clamp(150px, 20vw, 200px);
     height: clamp(150px, 20vw, 200px);
     background-size: cover;
 }
+.services_section__block_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+} 
+.services_section__block_link a{
+    color: var(--element_d);
+    text-decoration:underline;
+    font-weight: bold;
+    font-size: clamp(1.25rem, 3vw, 1.44rem);
+    &:hover {
+        color: var(--accent);
+    }
+} 
 

@@ -1,10 +1,11 @@
 const gulp = require('gulp');
 const browsersync = require('browser-sync').create();
 
-//HTML
+//HTML и PHP
 const fileInclude = require('gulp-file-include');
 const htmlclean = require('gulp-htmlclean');
 const webpHTML = require('gulp-webp-html');
+const merge = require('merge-stream');
 
 //SASS
 const sass = require('gulp-sass')(require('sass'));
@@ -64,6 +65,24 @@ gulp.task('html:docs', function(){
         .pipe(gulp.dest('./docs/'))
 });
 
+gulp.task('php:docs', function(){
+    function processFiles(source, destination) {
+        return gulp
+            .src(source)
+            .pipe(changed(destination, {hasChanged: changed.compareContents}))
+            .pipe(plumber(plumberNotify('PHP')))
+            .pipe(fileInclude(fileIncludeSettings))
+            .pipe(gulp.dest(destination))
+    }
+
+    var markupTask = processFiles(['./src/markup/**/*.php', './src/markup/blocks/*.php', './src/markup/admin/*.php'], './docs/');
+    var databaseTask = processFiles('./src/database/*.php', './docs/database');
+    var controllersTask = processFiles('./src/controllers/*.php', './docs/controllers');
+    var helpsTask = processFiles('./src/helps/*.php', './docs/helps');
+    var rootPathTask = processFiles('./src/root_path.php', './docs/');
+    return merge(markupTask, databaseTask, controllersTask, helpsTask, rootPathTask);
+});
+
 gulp.task('sass:docs', function(){
     return gulp
         .src('./src/scss/*.scss')
@@ -86,7 +105,6 @@ gulp.task('images:docs', function(){
     .pipe(changed('./docs/img/'))
     .pipe(webp())
     .pipe(gulp.dest('./docs/img/'))
-
     .pipe(gulp.src('./src/img/**/*'))
     .pipe(changed('./docs/img/'))
     .pipe(imagemin({ verbose: true}))
@@ -102,9 +120,9 @@ gulp.task('fonts:docs', function(){
 
 gulp.task('files:docs', function(){
     return gulp
-    .src('./src/files/**/*')
-    .pipe(changed('./docs/files/'))
-    .pipe(gulp.dest('./docs/files/'))
+    .src('./src/maket_files/**/*')
+    .pipe(changed('./docs/maket_files/'))
+    .pipe(gulp.dest('./docs/maket_files/'))
 });
 
 gulp.task('js:docs', function(){
@@ -126,11 +144,21 @@ gulp.task('js:docs', function(){
 //     return gulp.src('./docs/').pipe(server(serverOptions));
 // });
 
+// gulp.task('server:docs', function(){
+//     browsersync.init({
+//         server:{
+//             baseDir: "./docs"
+//         }
+//     });
+//     browsersync.watch('docs', browsersync.reload)
+// });
+
 gulp.task('server:docs', function(){
     browsersync.init({
-        server:{
-            baseDir: "./docs"
-        }
+            proxy: 'http://StickerWizardDocs.localhost',
+            host: 'StickerWizardDocs.localhost',
+            open: 'external',
+            notify: false
     });
-    browsersync.watch('docs', browsersync.reload)
+    //browsersync.watch('built', browsersync.reload)
 });
